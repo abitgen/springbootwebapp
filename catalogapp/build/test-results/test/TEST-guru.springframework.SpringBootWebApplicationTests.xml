@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="guru.springframework.SpringBootWebApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-29T12:56:23" hostname="DESKTOP-NB3QJNT" time="0.003">
+  <properties/>
+  <testcase name="contextLoads" classname="guru.springframework.SpringBootWebApplicationTests" time="0.003"/>
+  <system-out><![CDATA[2020-06-29 18:26:22.290  INFO 11560 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [guru.springframework.SpringBootWebApplicationTests], using SpringBootContextLoader
+2020-06-29 18:26:22.291  INFO 11560 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [guru.springframework.SpringBootWebApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-29 18:26:22.300  INFO 11560 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-29 18:26:22.301  INFO 11560 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2ba8e8f4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@66db6eaa, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6836c4b1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5cbf1ee3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@30bcb2c8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@d2f344b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@53e27a13, org.springframework.test.context.event.EventPublishingTestExecutionListener@770e3e8a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2271f851, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@56080d38, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@167ad708, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@10064123, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3d989002, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2bef2b44]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+2020-06-29 18:26:22.342  INFO 11560 --- [    Test worker] g.s.SpringBootWebApplicationTests        : Starting SpringBootWebApplicationTests on DESKTOP-NB3QJNT with PID 11560 (started by Abi in I:\Workspace\Github\springbootwebapp-jt\catalogapp)
+2020-06-29 18:26:22.342  INFO 11560 --- [    Test worker] g.s.SpringBootWebApplicationTests        : No active profile set, falling back to default profiles: default
+2020-06-29 18:26:22.777  INFO 11560 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-29 18:26:22.785  INFO 11560 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 1 JPA repository interfaces.
+2020-06-29 18:26:23.026  INFO 11560 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-29 18:26:23.037  INFO 11560 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-06-29 18:26:23.039  INFO 11560 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-06-29 18:26:23.039  INFO 11560 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-06-29 18:26:23.073  INFO 11560 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-29 18:26:23.074  INFO 11560 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-29 18:26:23.185  WARN 11560 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-29 18:26:23.470  INFO 11560 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 18:26:23.515  INFO 11560 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-29 18:26:23.770  INFO 11560 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f619fba8-3f49-4f3a-bba6-6230a27d0336
+
+2020-06-29 18:26:23.860  INFO 11560 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37c1b5a5, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e80adaf, org.springframework.security.web.header.HeaderWriterFilter@17895833, org.springframework.security.web.authentication.logout.LogoutFilter@6fe5c73b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c25c84b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51b0413c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2430ba70, org.springframework.security.web.session.SessionManagementFilter@292194f5, org.springframework.security.web.access.ExceptionTranslationFilter@5578f9e5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@78250510]
+2020-06-29 18:26:23.926  INFO 11560 --- [    Test worker] g.s.bootstrap.ProductLoader              : Saved Shirt - id: 1
+2020-06-29 18:26:23.929  INFO 11560 --- [    Test worker] g.s.bootstrap.ProductLoader              : Saved Mug - id:2
+2020-06-29 18:26:23.929  INFO 11560 --- [    Test worker] g.s.SpringBootWebApplicationTests        : Started SpringBootWebApplicationTests in 1.626 seconds (JVM running for 10.2)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
