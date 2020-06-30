@@ -2,7 +2,7 @@ import java.net.URI
 
 buildscript{
     dependencies {
-        classpath("com.bmuschko:gradle-docker-plugin:3.2.5")
+        //classpath("com.bmuschko:gradle-docker-plugin:3.2.5")
     }
 }
 

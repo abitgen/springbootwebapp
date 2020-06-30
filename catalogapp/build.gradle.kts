@@ -1,4 +1,3 @@
-import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 
 plugins {
     java
@@ -6,7 +5,7 @@ plugins {
     kotlin("plugin.spring") version "1.3.72"
     id("org.springframework.boot") version "2.3.1.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
-    id("com.bmuschko.docker-remote-api")
+    id("com.palantir.docker") version "0.25.0"
 }
 
 group = "guru.springframework"
@@ -46,6 +45,7 @@ tasks {
 
 
 docker {
+    name = "CatalogApp"
     /*url = "tcp://localhost:2375"*/
     /*if (System.getenv().containsKey("DOCKER_HOST") && System.getenv().containsKey("DOCKER_CERT_PATH")) {
         //url = System.getenv("DOCKER_HOST").replace("tcp", "https")
@@ -58,9 +58,10 @@ tasks.register<Copy>("copyDockerFile"){
     into(buildDir)
 }
 
+/*
 tasks.register<DockerBuildImage>("DockerbuildImage") {
     dependsOn("assemble")
     dependsOn("copyDockerFile")
     inputDir = buildDir
     tag = "${project.version}"
-}
+}*/
