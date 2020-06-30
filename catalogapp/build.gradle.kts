@@ -1,9 +1,12 @@
+import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
+
 plugins {
     java
     kotlin("jvm")
     kotlin("plugin.spring") version "1.3.72"
     id("org.springframework.boot") version "2.3.1.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
+    id("com.bmuschko.docker-remote-api")
 }
 
 group = "guru.springframework"
@@ -15,7 +18,6 @@ configure<JavaPluginConvention> {
 
 
 repositories {
-    mavenCentral()
     jcenter()
 }
 
@@ -40,4 +42,25 @@ tasks {
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
+}
+
+
+docker {
+    /*url = "tcp://localhost:2375"*/
+    /*if (System.getenv().containsKey("DOCKER_HOST") && System.getenv().containsKey("DOCKER_CERT_PATH")) {
+        //url = System.getenv("DOCKER_HOST").replace("tcp", "https")
+        certPath = File(System.getenv("DOCKER_CERT_PATH"))
+    }*/
+}
+
+tasks.register<Copy>("copyDockerFile"){
+    from("${rootDir}/Dockerfile")
+    into(buildDir)
+}
+
+tasks.register<DockerBuildImage>("DockerbuildImage") {
+    dependsOn("assemble")
+    dependsOn("copyDockerFile")
+    inputDir = buildDir
+    tag = "${project.version}"
 }
