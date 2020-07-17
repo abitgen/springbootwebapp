@@ -9,6 +9,7 @@ buildscript{
 plugins {
     java
     kotlin("jvm") version "1.3.61"
+    id("com.google.cloud.tools.jib") version "2.4.0" apply(false)
 }
 
 repositories {

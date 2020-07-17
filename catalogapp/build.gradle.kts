@@ -5,7 +5,7 @@ plugins {
     kotlin("plugin.spring") version "1.3.72"
     id("org.springframework.boot") version "2.3.1.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
-    id("com.palantir.docker") version "0.25.0"
+    id("com.google.cloud.tools.jib")
 }
 
 group = "guru.springframework"
@@ -43,15 +43,17 @@ tasks {
     }
 }
 
+jib.to.image = "docdodoc/catalogapp"
+jib.to.credHelper = "wincred"
 
-docker {
+/*docker {
     name = "CatalogApp"
-    /*url = "tcp://localhost:2375"*/
-    /*if (System.getenv().containsKey("DOCKER_HOST") && System.getenv().containsKey("DOCKER_CERT_PATH")) {
+    *//*url = "tcp://localhost:2375"*//*
+    *//*if (System.getenv().containsKey("DOCKER_HOST") && System.getenv().containsKey("DOCKER_CERT_PATH")) {
         //url = System.getenv("DOCKER_HOST").replace("tcp", "https")
         certPath = File(System.getenv("DOCKER_CERT_PATH"))
-    }*/
-}
+    }*//*
+}*/
 
 tasks.register<Copy>("copyDockerFile"){
     from("${rootDir}/Dockerfile")
