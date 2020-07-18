@@ -46,21 +46,22 @@ tasks {
 
 
 docker {
-    /*url = "tcp://localhost:2375"*/
-    /*if (System.getenv().containsKey("DOCKER_HOST") && System.getenv().containsKey("DOCKER_CERT_PATH")) {
-        //url = System.getenv("DOCKER_HOST").replace("tcp", "https")
-        certPath = File(System.getenv("DOCKER_CERT_PATH"))
-    }*/
+
 }
 
 tasks.register<Copy>("copyDockerFile"){
     from("${rootDir}/Dockerfile")
-    into(buildDir)
+    into("${buildDir.path}/docker")
+}
+
+tasks.register<Copy>("copyBuildJar"){
+    from("${buildDir}/libs")
+    into("${buildDir}/docker")
 }
 
 tasks.register<DockerBuildImage>("DockerbuildImage") {
     dependsOn("assemble")
+    dependsOn("copyBuildJar")
     dependsOn("copyDockerFile")
-    inputDir = buildDir
-    tag = "${project.version}"
+    images.add("${project.name}:${project.version}")
 }
